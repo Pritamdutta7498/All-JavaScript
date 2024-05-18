@@ -20,7 +20,9 @@
 
     <button
       onclick="
-cartQuantity = cartQuantity + 1;
+// cartQuantity = cartQuantity + 1;
+// shortcut
+cartQuantity += 1;
 console.log(`Add To cart - Cart Quantity: ${cartQuantity}`);
   "
     >
@@ -29,7 +31,9 @@ console.log(`Add To cart - Cart Quantity: ${cartQuantity}`);
     <!-- +2 cart btn -->
     <button
     onclick="
-    cartQuantity = cartQuantity + 2;
+    // cartQuantity = cartQuantity + 2;
+    cartQuantity += 2;
+
     console.log(`+ 2 - Cart Quantity: ${cartQuantity}`);
       "
     
@@ -37,15 +41,17 @@ console.log(`Add To cart - Cart Quantity: ${cartQuantity}`);
     <!-- +3 cart btn -->
     <button
     onclick="
-    cartQuantity = cartQuantity + 3;
+    // cartQuantity = cartQuantity + 3;
+    cartQuantity += 3;
+
     console.log(`+3 - Cart Quantity: ${cartQuantity}`);
       "
     >+3</button>
     <!-- reset btn -->
     <button
       onclick="
-      alert('Cart Reset!');
     console.log(`After Reset - Cart Quantity: ${cartQuantity = 0}`);
+    console.clear();
 
   "
     >
