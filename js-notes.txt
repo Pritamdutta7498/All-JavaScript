@@ -22,3 +22,4 @@ snake_case, but isn't use in js;
 const can't change it's value later like let;
 we use let when we have to change the variable but by default we have to use the const;
 we dont' use var in new javascript cause it's has so much issue
+2.30
