@@ -11,3 +11,14 @@ html and js er multiline comment same /**/
 css comment <!---->
 ; means end of instraction
 console.clear() console clear kora jai
+know about variable reassignment shortcut;
+	+=2 ---> variable = variable + 2
+	++ ----> variable  = variable + 1;
+	also we have *2, /2, --, -2,
+camelCase is the standard for javascript;
+PascalCase is only use in 1 features;
+kebab-case  isn't work in javascript; it's only use in html css and file name;
+snake_case, but isn't use in js;
+const can't change it's value later like let;
+we use let when we have to change the variable but by default we have to use the const;
+we dont' use var in new javascript cause it's has so much issue
