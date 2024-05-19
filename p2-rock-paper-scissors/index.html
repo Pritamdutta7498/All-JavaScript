@@ -80,28 +80,36 @@
          </button>
             <!-- paper -->
          <button onclick="
-             let computerMove2 = computerMoveFun();
-              if(computerMove2 === 'rock'){
-                let result = 'You Win!';
-                alert(`Boyooah ${result}`);
-    
-              }
-              else if(computerMove2 === 'paper'){
-                let result = 'Tie!';
-                alert(`Oops ${result}`);
-    
-              }else if(computerMove2 === 'scissors'){
-                let result = 'You Loss!';
-                alert(`shit, ${result}`);
-                
-              }" title="paper">
+        playGame('paper');
+         " title="paper">
               🖐️
           </button>
     </div>
 
     <script>
       // rock paper scissors algo is: between 0 - 1/3 is rock || 1/3 - 2/3 paper || 2/3 - 1 scissor;
+      // playGame function for player
 
+            function playGame(playerMove){
+
+                let computerMove = computerMoveFun();
+                let result = '';
+            
+                if(playerMove === 'paper'){
+                  if(computerMove === 'rock'){
+                        result = 'You Win!';
+                      }
+                      else if(computerMove === 'paper'){
+                        result = 'Tie!';
+                      }else if(computerMove === 'scissors'){
+                        result = 'You Loss!';
+                        
+                      }
+                }
+                alert(`You choose ${playerMove} and computer choose ${computerMove}, So ${result}`);
+                // return playerMove;    
+              }
+// computer move function for computer
       function computerMoveFun(){
         const randomNum = Math.random();
         let computerMove = '';
@@ -116,7 +124,8 @@
         }
 
         return computerMove;
-      }
+      };
+
     </script>
   </body>
 </html>
