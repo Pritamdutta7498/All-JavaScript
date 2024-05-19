@@ -29,3 +29,22 @@ logical operatore let us combine boolean value;
 a scope limits where vaiables exist;
 scope helps us naming conflict;
 javascript falsy values => false, 0, '', NaN, undefined, null
+function let's us reuse our code
+following the code line by line is called tracing the code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
