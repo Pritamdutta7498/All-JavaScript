@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+  </head>
+  <style>
+    body{
+      text-align: center;
+      width: 100%;
+      margin: 0 auto;
+    }
+    div {
+      width: 600px;
+      text-align: center;
+      background-color: rgb(0, 0, 0);
+      margin: auto;
+    }
+
+    button {
+      padding: 20px;
+      border: 2px solid white;
+      background-color: black;
+      border-radius: 100%;
+      font-size: 90px;
+      cursor: pointer;
+      margin: 20px;
+    }
+  </style>
+
+  <body>
+    <h1>Welcome to rock paper scissors game!</h2>
+    <p>Rules of rock paper scissors</p>
+    <pre>
+      1. rock bets scissors ✊>✌️
+      2. scissors bets paper ✌️ > 🖐️
+      3. paper bets rock 🖐️ > ✊
+      4. If two are same it's tie ✊ = ✊
+      
+    </pre>
+
+    <div>
+      <!-- ✌️✊🤝 -->
+      <button
+        onclick="
+        const randomNum = Math.random();
+        let computerMove = '';
+    if (randomNum >= 0 && randomNum < 1 / 3) {
+     computerMove = 'rock';
+    //  console.log(computerMove)
+    }
+    else if (randomNum > 1 / 3 && randomNum < 2 / 3) {
+      computerMove = 'paper';
+    } else if (randomNum > 2 / 3 && randomNum < 1) {
+      computerMove = 'scissors';
+    }
+
+    if(computerMove === 'rock'){
+      let result = 'Tie!';
+      alert(`Oops ${result}`);
+    }
+    else if(computerMove === 'paper'){
+      let result = 'You Loss!';
+      alert(`shit, ${result}`);
+    }else if(computerMove === 'scissors'){
+      let result = 'You Win!';
+      alert(`Boyooah ${result}`);
+      
+    }
+
+
+    "
+        title="rock"
+      >
+        ✊
+      </button>
+
+      <!-- scissors -->
+      <button
+        onclick="
+      const randomNum1 = Math.random();
+      let computerMove1 = '';
+      // console.log(randomNum1)
+    if (randomNum1 >= 0 && randomNum1 < 1 / 3) {
+     computerMove1 = 'rock';
+    //  console.log(computerMove1)
+    }
+    else if (randomNum1 > 1 / 3 && randomNum1 < 2 / 3) {
+      computerMove1 = 'paper';
+    } else if (randomNum1 > 2 / 3 && randomNum1 < 1) {
+      computerMove1 = 'scissors';
+    }
+
+    if(computerMove1 === 'scissors'){
+      let result = 'Tie!';
+      alert(`Oops ${result}`);
+    }
+   else if(computerMove1 === 'paper'){
+      let result = 'You Win!';
+      alert(`Boyooah ${result}`);
+      
+    }
+    else if(computerMove1 === 'rock'){
+      let result = 'You Loss!';
+      alert(`shit, ${result}`);
+    }
+
+
+    "
+        title="scissors"
+      >
+        ✌️
+      </button>
+      <!-- paper -->
+      <button
+        onclick="
+                const randomNum2 = Math.random();
+                let computerMove2 = '';
+                console.log(randomNum2)
+                if (randomNum2 >= 0 && randomNum2 < 1 / 3) {
+                  computerMove2 = 'rock';
+                }
+              else if (randomNum2 > 1 / 3 && randomNum2 < 2 / 3) {
+                computerMove2 = 'paper';
+              } else if (randomNum2 > 2 / 3 && randomNum2 < 1) {
+                computerMove2 = 'scissors';
+              }
+          
+              if(computerMove2 === 'rock'){
+                let result = 'You Win!';
+                alert(`Boyooah ${result}`);
+    
+              }
+              else if(computerMove2 === 'paper'){
+                let result = 'Tie!';
+                alert(`Oops ${result}`);
+    
+              }else if(computerMove2 === 'scissors'){
+                let result = 'You Loss!';
+                alert(`shit, ${result}`);
+                
+              }
+          
+          
+              "
+        title="paper"
+      >
+        🖐️
+      </button>
+
+      <br />
+    </div>
+
+    <script>
+      // rock paper scissors algo is: between 0 - 1/3 is rock || 1/3 - 2/3 paper || 2/3 - 1 scissor;
+    </script>
+  </body>
+</html>

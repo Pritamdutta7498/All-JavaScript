@@ -1,5 +1,5 @@
 ******Js Basic******
-js order of operation -> 1st - (...) 2nd - * / 3rd - + -
+js order of operation -> 1st - (...) 2nd - * / 3rd - + - 4th - comparison operator(<>) 5th - logical operator;
 concatination means combine some strings together
 javascript adds left to right
 for write string by default we use single quotes('),
@@ -23,3 +23,9 @@ const can't change it's value later like let;
 we use let when we have to change the variable but by default we have to use the const;
 we dont' use var in new javascript cause it's has so much issue
 2.30
+boolean value represent if a value true or false;
+js e === or !== use insted of == or != cause then we also check the type
+logical operatore let us combine boolean value;
+a scope limits where vaiables exist;
+scope helps us naming conflict;
+javascript falsy values => false, 0, '', NaN, undefined, null
