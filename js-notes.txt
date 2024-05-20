@@ -48,6 +48,6 @@ json => js object = JSON.parse();
 js object => json = JSON.stringify(); also we can make anything string with the JSON.stringify()
 localStorage support only string;
 when something doesn't exist in localStorage it's give => null
-
-
-
+!score same as score === null
+object references is confusing and it's don't compare the value it's only references the object
+destructuring with {}, 
