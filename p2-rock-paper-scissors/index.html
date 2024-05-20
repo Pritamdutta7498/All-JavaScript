@@ -66,18 +66,27 @@
       score.wins = 0;
       score.losses = 0;
       score.ties = 0;
-      " >🔄️</button>
+
+      localStorage.removeItem('score');
+      alert('Reset successful!')
+      
+      ">🔄️</button>
     </div>
 
     <script>
       // rock paper scissors algo is: between 0 - 1/3 is rock || 1/3 - 2/3 paper || 2/3 - 1 scissor;
       // playGame function for player
 
-      const score = {
-        wins: 0,
-        losses: 0,
-        ties: 0
-      };
+
+      let score = JSON.parse(localStorage.getItem('score'));
+
+      if (score === null) {
+        score = {
+          wins: 0,
+          losses: 0,
+          ties: 0
+        }
+      }
 
       function playGame(playerMove) {
 
@@ -116,16 +125,21 @@
             result = 'You Loss!';
           }
         }
-         
-      if(result === 'You Win!'){
-        score.wins++;
 
-      }else if(result === 'You Loss!'){
-        score.losses++;
+        if (result === 'You Win!') {
+          score.wins++;
 
-      }else if(result === 'Tie!'){
-        score.ties++;
-      }
+        } else if (result === 'You Loss!') {
+          score.losses++;
+
+        } else if (result === 'Tie!') {
+          score.ties++;
+        }
+
+        // set scors data to localStorage
+        localStorage.setItem('score', JSON.stringify(score));
+
+
         alert(`You choose ${playerMove} and computer choose ${computerMove}, So ${result}
         \nYou scores: ${score.wins} Wins, ${score.losses} Losses, ${score.ties} Ties !`);
 
