@@ -61,11 +61,23 @@
          " title="paper">
         🖐️
       </button>
+      <!-- reset btn -->
+      <button title="reset" onclick="
+      score.wins = 0;
+      score.losses = 0;
+      score.ties = 0;
+      " >🔄️</button>
     </div>
 
     <script>
       // rock paper scissors algo is: between 0 - 1/3 is rock || 1/3 - 2/3 paper || 2/3 - 1 scissor;
       // playGame function for player
+
+      const score = {
+        wins: 0,
+        losses: 0,
+        ties: 0
+      };
 
       function playGame(playerMove) {
 
@@ -104,8 +116,19 @@
             result = 'You Loss!';
           }
         }
+         
+      if(result === 'You Win!'){
+        score.wins++;
 
-        alert(`You choose ${playerMove} and computer choose ${computerMove}, So ${result}`);
+      }else if(result === 'You Loss!'){
+        score.losses++;
+
+      }else if(result === 'Tie!'){
+        score.ties++;
+      }
+        alert(`You choose ${playerMove} and computer choose ${computerMove}, So ${result}
+        \nYou scores: ${score.wins} Wins, ${score.losses} Losses, ${score.ties} Ties !`);
+
         return;
       }
       // computer move function for computer
