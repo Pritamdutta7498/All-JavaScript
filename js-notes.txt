@@ -31,11 +31,12 @@ scope helps us naming conflict;
 javascript falsy values => false, 0, '', NaN, undefined, null
 function let's us reuse our code
 following the code line by line is called tracing the code
+in function reutrn we get a value out of a function;
+parameter puts value into function;
+https://github.com/Pritamdutta7498?page=3&tab=repositories
 
-
-
-
-
+we can change the object property-value pair
+product.name =  . this is called dot notation
 
 
 
