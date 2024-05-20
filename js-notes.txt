@@ -37,15 +37,17 @@ https://github.com/Pritamdutta7498?page=3&tab=repositories
 
 we can change the object property-value pair
 product.name =  . this is called dot notation
-
-
-
-
-
-
-
-
-
+object make our code more organized
+we use bracket notation in object cause sometimes the dot notation doesn't work like when in a object a property name is in hypen, product-price: 599; that time we we the bracket notation product['product-price']
+but use dot notation by default cause it's easy to use
+Object + function = Method ex; console.log is a method, Math.random()
+we called build-in object : console.log, Json, localStorage
+JSON similar to js object but with less feature, not supported single quotes and inside the function	
+JSON is more universal, every programming language understand
+json => js object = JSON.parse();
+js object => json = JSON.stringify(); also we can make anything string with the JSON.stringify()
+localStorage support only string;
+when something doesn't exist in localStorage it's give => null
 
 
 
