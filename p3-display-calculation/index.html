@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculation and effect of DOM</title>
+</head>
+<style>
+    body {
+        text-align: center;
+        width: 100%;
+        font-size: 20px;
+        margin: 0 auto;
+    }
+</style>
+
+<body>
+    <h1> <u>Dom Manupulation and calculation</u> </h2>
+        <p>YouTube Subscribe button</p>
+        <br>
+        <button class="js-sub-btn" onclick="
+        subscribeFun();
+        ">Subscribe</button>
+
+        <br>
+        <p>Amazon Shipping Calculator</p>
+        <p>Orders under $40 = +$10 Shipping.</p>
+        <p>Orders over $40 = Free Shipping!</p>
+        
+            <input type="number" placeholder="Enter your cost">
+            <button onclick="
+            
+            " >Calculate</button>
+      
+        
+
+        <script>
+            // subscribe btn function
+            function subscribeFun() {
+                const subBtnElement = document.querySelector('.js-sub-btn')
+                // console.log(subBtnElement.innerText)
+                if (subBtnElement.innerText = 'Subscribe') {
+                    subBtnElement.innerHTML = 'Subscribed';
+                }else{
+                    subBtnElement.innerHTML = 'Subscribe';
+                }
+            }
+
+        </script>
+</body>
+
+</html>
