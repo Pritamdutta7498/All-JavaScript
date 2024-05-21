@@ -18,6 +18,7 @@
     text-align: center;
     background-color: rgb(0, 0, 0);
     margin: auto;
+    border-radius: 10px;
   }
 
   button {
@@ -33,10 +34,11 @@
   .score-board {
     font-size: 22px;
     padding: 20px 0px;
-    background-color: antiquewhite;
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
     width: 500px;
-    height: 200px;
-    margin: 0 auto;
+    height: 130px;
+    margin: 1px auto;
 
   }
 </style>
@@ -88,6 +90,7 @@
       localStorage.removeItem('score');
       // alert('Reset successful!')
       updateScoreElement();
+    
       
       ">🔄️</button>
     </div>
@@ -111,7 +114,13 @@
       function updateScoreElement() {
         document.querySelector('.js-score')
           .innerHTML = `Your scores: ${score.wins} Wins, ${score.losses} Losses, ${score.ties} Ties !`;
+          document.querySelector('.js-result')
+          .innerHTML = '';
+        document.querySelector('.js-moves')
+          .innerHTML = '';
+
       }
+
       function playGame(playerMove) {
 
         let computerMove = computerMoveFun();
@@ -162,15 +171,15 @@
           score.ties++;
         }
         //update the score in display
-        updateScoreElement(); 
+        updateScoreElement();
         // set scors data to localStorage
         localStorage.setItem('score', JSON.stringify(score));
 
 
         document.querySelector('.js-result')
-         .innerHTML = result;
+          .innerHTML = result;
         document.querySelector('.js-moves')
-         .innerHTML = `You - ${playerMove} | ${computerMove} - Computer`;
+          .innerHTML = `You - ${playerMove} | ${computerMove} - Computer`;
 
         // alert(`You choose ${playerMove} and computer choose ${computerMove}, So ${result}
         // \nYou scores: ${score.wins} Wins, ${score.losses} Losses, ${score.ties} Ties !`);
