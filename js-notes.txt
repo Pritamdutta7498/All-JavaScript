@@ -60,7 +60,7 @@ js diye jodi kono class use kora hoy se class ta lekar age js lika best practise
 querySelector() amra sob element, class, id select korthe pari
 innerHTML diye kono element er text k select korle sei element e jodi space thake tahole problem hoy, ejonno amra innerText use korbo
 input e access korle dom e input er innterText na diye value dite hobe (numbers)
-
+more know about eventListeners like - onclick, onKeydown, onscroll, onmouseenter...
 
 
 
