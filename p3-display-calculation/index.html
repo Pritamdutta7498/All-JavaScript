@@ -52,15 +52,12 @@
             // calculate function
             function calculate() {
                 const inputElement = document.querySelector('input');
-                const cost = parseInt(inputElement.value);
+                let cost = parseInt(inputElement.value);
                 const totalPrice = document.querySelector('.js-total');
                 //    console.log(cost);
                 if (cost < 40) {
-                    const shippingCost = 10;
-                    // console.log(typeof parseInt(cost))
-                    // console.log(typeof shippingCost)
-                    const priceWithShip = cost + shippingCost;
-                    totalPrice.innerHTML = `Total: $${priceWithShip}`;
+                    cost = cost + 10;
+                    totalPrice.innerHTML = `Total: $${cost}`;
 
                 } else {
                     totalPrice.innerHTML = `Total: $${cost}`;
