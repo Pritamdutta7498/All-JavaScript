@@ -29,6 +29,16 @@
     cursor: pointer;
     margin: 20px;
   }
+
+  .score-board {
+    font-size: 22px;
+    padding: 20px 0px;
+    background-color: antiquewhite;
+    width: 500px;
+    height: 200px;
+    margin: 0 auto;
+
+  }
 </style>
 
 <body>
@@ -41,12 +51,20 @@
       4. If two are same it's tie ✊ = ✊
       
     </pre>
+    <!-- showing the score of the game -->
+    <div class="score-board">
+      <p class="js-result"></p>
+      <p class="js-moves"></p>
+      <p class="js-score"> </p>
+
+    </div>
 
     <div>
       <!-- ✌️✊🤝 -->
       <!-- rock btn -->
       <button onclick="
           playGame('rock');
+          document.querySelector('js-game-score');
           " title="rock">✊
       </button>
 
@@ -68,7 +86,8 @@
       score.ties = 0;
 
       localStorage.removeItem('score');
-      alert('Reset successful!')
+      // alert('Reset successful!')
+      updateScoreElement();
       
       ">🔄️</button>
     </div>
@@ -78,20 +97,21 @@
       // playGame function for player
 
 
+
       let score = JSON.parse(localStorage.getItem('score')) || {
-          wins: 0,
-          losses: 0,
-          ties: 0
-        }
+        wins: 0,
+        losses: 0,
+        ties: 0
+      };
 
-      // if (!score) {
-      //   score = {
-      //     wins: 0,
-      //     losses: 0,
-      //     ties: 0
-      //   }
-      // }
 
+      // update score on display
+      updateScoreElement();
+
+      function updateScoreElement() {
+        document.querySelector('.js-score')
+          .innerHTML = `Your scores: ${score.wins} Wins, ${score.losses} Losses, ${score.ties} Ties !`;
+      }
       function playGame(playerMove) {
 
         let computerMove = computerMoveFun();
@@ -130,6 +150,8 @@
           }
         }
 
+
+
         if (result === 'You Win!') {
           score.wins++;
 
@@ -139,13 +161,19 @@
         } else if (result === 'Tie!') {
           score.ties++;
         }
-
+        //update the score in display
+        updateScoreElement(); 
         // set scors data to localStorage
         localStorage.setItem('score', JSON.stringify(score));
 
 
-        alert(`You choose ${playerMove} and computer choose ${computerMove}, So ${result}
-        \nYou scores: ${score.wins} Wins, ${score.losses} Losses, ${score.ties} Ties !`);
+        document.querySelector('.js-result')
+         .innerHTML = result;
+        document.querySelector('.js-moves')
+         .innerHTML = `You - ${playerMove} | ${computerMove} - Computer`;
+
+        // alert(`You choose ${playerMove} and computer choose ${computerMove}, So ${result}
+        // \nYou scores: ${score.wins} Wins, ${score.losses} Losses, ${score.ties} Ties !`);
 
         return;
       }
