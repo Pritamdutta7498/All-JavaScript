@@ -23,7 +23,8 @@
         cursor: pointer;
         border: 1px solid transparent;
     }
-    .is-subscribed{
+
+    .is-subscribed {
         background-color: antiquewhite;
         color: black;
     }
@@ -86,13 +87,15 @@
             function subscribeFun() {
                 const subBtnElement = document.querySelector('.js-sub-btn')
                 // console.log(subBtnElement.innerText)
-                if (subBtnElement.innerText = 'Subscribe') {
+                if (subBtnElement.innerText === 'Subscribe') {
                     subBtnElement.innerHTML = 'Subscribed';
                     subBtnElement.classList.add('is-subscribed');
                 } else {
                     subBtnElement.innerHTML = 'Subscribe';
+                    subBtnElement.classList.remove('is-subscribed');
                 }
             }
+
             //using the keybord feature
             function handleCostKeyDown() {
                 // console.log(event.key)
