@@ -44,13 +44,21 @@ const object  = {
 // console.log(message, price, time)
 
 //shorthand property
-const {message} = object;
-const object1  = {
-    message,
-    // shorthand method syntax
-    method(){
-        console.log('testing the my function')
-    }
-}
-console.log(object1)
-object1.method()
+// const {message} = object;
+// const object1  = {
+//     message,
+//     // shorthand method syntax
+//     method(){
+//         console.log('testing the my function')
+//     }
+// }
+// console.log(object1)
+// object1.method()
+
+// DOM
+// document.title = 'good job'
+// creating a btn with dom
+// document.body.innerHTML = '<button>Good job </button>'
+document.querySelector('button')
+.innerHTML = 'changed the btn text';
+document.querySelector('h2').innerHTML = 'hello world'

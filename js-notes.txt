@@ -51,3 +51,38 @@ when something doesn't exist in localStorage it's give => null
 !score same as score === null
 object references is confusing and it's don't compare the value it's only references the object
 destructuring with {}, 
+The document object represent the webpage
+Method = function saved inside an object
+document.querySelector() - lets us get any element from the page and put it inside javascript
+innerHTML = change the inside element of the body
+but jodi 2ta btn thake sekane querySelector only get first btn.
+js diye jodi kono class use kora hoy se class ta lekar age js lika best practise, js-button
+querySelector() amra sob element, class, id select korthe pari
+innerHTML diye kono element er text k select korle sei element e jodi space thake tahole problem hoy, ejonno amra innerText use korbo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
