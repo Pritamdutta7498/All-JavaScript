@@ -13,13 +13,49 @@
         font-size: 20px;
         margin: 0 auto;
     }
+
+    .subscribe-btn {
+        padding: 15px 30px;
+        background-color: black;
+        color: aliceblue;
+        font-size: 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        border: 1px solid transparent;
+    }
+    .is-subscribed{
+        background-color: antiquewhite;
+        color: black;
+    }
+
+    .cost-input {
+        width: 200px;
+        height: 30px;
+        font-size: 20px;
+        padding: 8px;
+        border: 2px solid black;
+        background-color: aliceblue;
+        color: black;
+        font-size: 20px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .calculate-btn {
+        padding: 12px 30px;
+        background-color: rgb(69, 197, 108);
+        color: aliceblue;
+        font-size: 20px;
+        border: 1px solid transparent;
+        margin-left: -5px;
+    }
 </style>
 
 <body>
     <h1> <u>Dom Manupulation and calculation</u> </h2>
         <p>YouTube Subscribe button</p>
         <br>
-        <button class="js-sub-btn" onclick="
+        <button class="js-sub-btn subscribe-btn" onclick="
         subscribeFun();
         ">Subscribe</button>
 
@@ -28,30 +64,42 @@
         <p>Orders under $40 = +$10 Shipping.</p>
         <p>Orders over $40 = Free Shipping!</p>
 
-        <input type="number" placeholder="Enter your cost" onkeydown="
-        //using the keybord feature
-        // console.log(event.key)
-        if(event.key === 'Enter'){
-            calculate();
-        }">
+        <input type="number" class="cost-input" placeholder="Enter your cost" onkeydown="
+        handleCostKeyDown();
+       ">
         <button onclick="
             calculate();
             
-            ">Calculate</button>
+            " class="calculate-btn">Calculate</button>
         <p class="js-total"></p>
+        <br>
+        <p href="" class="js-add-style" onclick="
+            addTheStyle();
+            ">click to add css</p>
 
 
 
         <script>
+
+
             // subscribe btn function
             function subscribeFun() {
                 const subBtnElement = document.querySelector('.js-sub-btn')
                 // console.log(subBtnElement.innerText)
                 if (subBtnElement.innerText = 'Subscribe') {
                     subBtnElement.innerHTML = 'Subscribed';
+                    subBtnElement.classList.add('is-subscribed');
                 } else {
                     subBtnElement.innerHTML = 'Subscribe';
                 }
+            }
+            //using the keybord feature
+            function handleCostKeyDown() {
+                // console.log(event.key)
+                if (event.key === 'Enter') {
+                    calculate();
+                }
+
             }
 
             // calculate function
