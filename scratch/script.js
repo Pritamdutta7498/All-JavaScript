@@ -79,17 +79,24 @@ const object  = {
 //     console.log(arryList[i]);
 // }
 
-//calculate with array
+//calculate with array - accumulator pattern
 const nums = [
     1, 45, 4
 ];
-let total = 0;
+let total = 0;//accumulator variable
 for( let i = 0; i< nums.length; i++){
     const num = nums[i];
     total += num;
 }
 console.log(total);
 
+//double the numbers of array 
+let numsDouble = [];
+for(let i = 0; i<nums.length; i++){
+    const num = nums[i];
+    numsDouble.push(num*2);
+};
+console.log(numsDouble);
 
 
 
