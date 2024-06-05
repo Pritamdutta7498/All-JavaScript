@@ -62,3 +62,32 @@ const object  = {
 // document.querySelector('button')
 // .innerHTML = 'changed the btn text';
 // document.querySelector('h2').innerHTML = 'hello world'
+
+// print all array in clg---------------
+const arryList = [
+    'array-1',
+    'array-2',
+    'array-3',
+    'array-4',
+    'array-5',
+    'array-6'
+
+];
+
+//remember to add length - 1; if i<=(using the less then or equal);
+for(i=0; i<=arryList.length - 1; i++){
+    console.log(arryList[i]);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
