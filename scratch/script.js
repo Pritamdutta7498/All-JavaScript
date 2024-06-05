@@ -64,20 +64,31 @@ const object  = {
 // document.querySelector('h2').innerHTML = 'hello world'
 
 // print all array in clg---------------
-const arryList = [
-    'array-1',
-    'array-2',
-    'array-3',
-    'array-4',
-    'array-5',
-    'array-6'
+// const arryList = [
+//     'array-1',
+//     'array-2',
+//     'array-3',
+//     'array-4',
+//     'array-5',
+//     'array-6'
 
-];
+// ];
 
 //remember to add length - 1; if i<=(using the less then or equal);
-for(i=0; i<=arryList.length - 1; i++){
-    console.log(arryList[i]);
+// for(i=0; i<=arryList.length - 1; i++){
+//     console.log(arryList[i]);
+// }
+
+//calculate with array
+const nums = [
+    1, 45, 4
+];
+let total = 0;
+for( let i = 0; i< nums.length; i++){
+    const num = nums[i];
+    total += num;
 }
+console.log(total);
 
 
 
