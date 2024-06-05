@@ -59,6 +59,6 @@ const object  = {
 // document.title = 'good job'
 // creating a btn with dom
 // document.body.innerHTML = '<button>Good job </button>'
-document.querySelector('button')
-.innerHTML = 'changed the btn text';
-document.querySelector('h2').innerHTML = 'hello world'
+// document.querySelector('button')
+// .innerHTML = 'changed the btn text';
+// document.querySelector('h2').innerHTML = 'hello world'

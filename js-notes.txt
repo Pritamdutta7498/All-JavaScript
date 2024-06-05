@@ -62,7 +62,8 @@ innerHTML diye kono element er text k select korle sei element e jodi space thak
 input e access korle dom e input er innterText na diye value dite hobe (numbers)
 more know about eventListeners like - onclick, onKeydown, onscroll, onmouseenter...
 assignment operator =, comparison operator ===, condition use korar somoy eigula keyal rhakthe hobe!
-
+Array is a list of value;
+scores.win = scores.win + 1 / scores.win += 1
 
 
 
