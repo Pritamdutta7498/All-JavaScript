@@ -64,10 +64,9 @@ more know about eventListeners like - onclick, onKeydown, onscroll, onmouseenter
 assignment operator =, comparison operator ===, condition use korar somoy eigula keyal rhakthe hobe!
 Array is a list of value;
 scores.win = scores.win + 1 / scores.win += 1
-
-
-
-
+---------------
+arrayName.push() diye array the push kora jai
+it's better to use while loop when in non-standard loop.
 
 
 
