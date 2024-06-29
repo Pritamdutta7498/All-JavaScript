@@ -1,4 +1,16 @@
-let todoList = ["make dinner", "wash the dress"];
+let todoList = [
+    {
+        name: 'wash the dress',
+        dueDate: '29-06-2024'
+    
+    },
+    {
+        name: 'Watch the movie',
+        dueDate: '30-06-2024'
+    
+    }
+    
+];
 
 getTodoList();
 function getTodoList() {
@@ -7,28 +19,33 @@ function getTodoList() {
 
 // generating the html using js
     for (let i = 0; i < todoList.length; i++) {
-        const todo = todoList[i];
+        const todoObject = todoList[i];
+
+        // destructuring the object to get name and dueDate properties directly
+        const{name, dueDate} = todoObject;
         const html = `
         <p>
-            ${todo}
+            ${name} , ${dueDate}
             <button 
             onclick=" 
             todoList.splice(${i}, 1);
             getTodoList();
-            "
-            >Delete</button>
+            ">Delete</button>
         </p> `;
         todoListHtml += html;
     }
-    console.log(todoListHtml);
+    // console.log(todoListHtml);
 
     document.querySelector(".js-todo-list").innerHTML = todoListHtml;
 }
 
 function addTodo() {
   const inputElement = document.querySelector(".js-name-input");
+  const dateElement = document.querySelector(".js-date-input");
   const name = inputElement.value;
-  todoList.push(name);
+  const dueDate = dateElement.value;
+//   push the object
+  todoList.push({name, dueDate})
   // console.log(todoList);
   inputElement.value = "";
   getTodoList();
