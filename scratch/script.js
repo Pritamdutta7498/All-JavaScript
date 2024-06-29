@@ -33,11 +33,11 @@
 // console.log(JSON.parse(jsonData));
 
 //destructuring
-const object  = {
-    message: 'good job',
-    price: 456,
-    time: '5.00 AM'
-}
+// const object  = {
+//     message: 'good job',
+//     price: 456,
+//     time: '5.00 AM'
+// }
 // console.log(object);
 // const message = object.message;
 // const {message, price, time} = object;
@@ -80,23 +80,25 @@ const object  = {
 // }
 
 //calculate with array - accumulator pattern
-const nums = [
-    1, 45, 4
-];
-let total = 0;//accumulator variable
-for( let i = 0; i< nums.length; i++){
-    const num = nums[i];
-    total += num;
-}
-console.log(total);
+// const nums = [
+//     1, 45, 4
+// ];
+// let total = 0;//accumulator variable
+// for( let i = 0; i< nums.length; i++){
+//     const num = nums[i];
+//     total += num;
+// }
+// console.log(total);
 
-//double the numbers of array 
-let numsDouble = [];
-for(let i = 0; i<nums.length; i++){
-    const num = nums[i];
-    numsDouble.push(num*2);
-};
-console.log(numsDouble);
+// //double the numbers of array 
+// let numsDouble = [];
+// for(let i = 0; i<nums.length; i++){
+//     const num = nums[i];
+//     numsDouble.push(num*2);
+// };
+// console.log(numsDouble);
+
+
 
 
 
