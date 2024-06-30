@@ -1,17 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>scratch html</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        #todo-form {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        #todo-input {
+            flex-grow: 1;
+            padding: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: #888;
+        }
+    </style>
 </head>
-<link rel="stylesheet" href="style.css">
 <body>
-<h2>Practise Project</h2>
-<!-- <button>Hello</button> -->
+    <h1>Todo App</h1>
+    <form id="todo-form">
+        <input type="text" id="todo-input" placeholder="Enter a new task" required>
+        <button type="submit">Add</button>
+    </form>
+    <ul id="todo-list"></ul>
 
+    <script>
+        const form = document.getElementById('todo-form');
+        const input = document.getElementById('todo-input');
+        const todoList = document.getElementById('todo-list');
 
+        let todos = JSON.parse(localStorage.getItem('todos')) || [];
 
-  <script src="./script.js"></script>
+        function renderTodos() {
+            todoList.innerHTML = '';
+            todos.forEach((todo, index) => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <input type="checkbox" ${todo.completed ? 'checked' : ''}>
+                    <span class="${todo.completed ? 'completed' : ''}">${todo.text}</span>
+                    <button>Delete</button>
+                `;
+                
+                const checkbox = li.querySelector('input');
+                checkbox.addEventListener('change', () => toggleTodo(index));
+                
+                const deleteButton = li.querySelector('button');
+                deleteButton.addEventListener('click', () => deleteTodo(index));
+                
+                todoList.appendChild(li);
+            });
+            saveTodos();
+        }
+
+        function addTodo(text) {
+            todos.push({ text, completed: false });
+            renderTodos();
+        }
+
+        function toggleTodo(index) {
+            todos[index].completed = !todos[index].completed;
+            renderTodos();
+        }
+
+        function deleteTodo(index) {
+            todos.splice(index, 1);
+            renderTodos();
+        }
+
+        function saveTodos() {
+            localStorage.setItem('todos', JSON.stringify(todos));
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const text = input.value.trim();
+            if (text) {
+                addTodo(text);
+                input.value = '';
+            }
+        });
+
+        renderTodos();
+    </script>
 </body>
 </html>
