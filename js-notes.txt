@@ -83,9 +83,10 @@ when something doesn't exist in localStorage it's give => null
 !score same as score === null
 that's why
 if(message === null){} we have to use like some condition for avoid the error
+also we can use with || in when get the item...
+JSON.parse(localStorage.getItem('message'))||{};
 
-
-
+appendChild() is a method that adds a new child element to an existing element. In this case, it adds the todoElement to the todoListElement.
 
 
 

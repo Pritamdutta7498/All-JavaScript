@@ -21,13 +21,14 @@ body {
 }
 
 .data input {
-    width: 170px;
+    width: 200px;
     height: 40px;
     border-radius: 5px;
     border: none;
     outline: none;
     margin-left: 5px;
     padding: 0 10px;
+
 }
 
 .data button {
@@ -45,19 +46,20 @@ body {
 
 .todo-item {
 
-    margin: 10px auto;
+    margin: 15px auto;
     width: 565px;
     display: grid;
-    grid-template-columns: 200px 200px 110px;
-    grid-gap:  10px;
-    justify-content: center;
+    grid-template-columns: 3fr 3fr 1fr;
     font-weight: 600;
     align-items: center;
 }
+.todo-item span{
+    text-align: left;
+}
 .todo-delete-btn {
     width: 100px;
-    height: 40px;
-    margin-right: 10px;
+    height: 30px;
+   
     border-radius: 5px;
     border: none;
     outline: none;
@@ -66,3 +68,57 @@ body {
     font-size: 16px;
     background-color: rgba(252, 68, 68, 0.952);
 }
+/* .todo-complete-btn {
+    background-color: #007bff; 
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .todo-complete-btn.completed {
+    background-color: #34c759;  
+  } */
+
+  .todo-complete-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+  }
+  
+  .todo-complete-btn.completed {
+    background-color: #34c759;
+
+  }
+  .modal {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0, 0, 0, 0); */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal.show {
+    display: flex;
+  }
+  
+  .modal-content {
+    background-color: transparent !important;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .modal-content img {
+    width: 500px;
+    height: 500px;
+    margin: 20px auto;
+  }

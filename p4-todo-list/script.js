@@ -1,4 +1,3 @@
-
 const nameInput = document.querySelector(".js-name-input");
 const dateInput = document.querySelector(".js-date-input");
 const todoListElement = document.querySelector(".js-todo-list");
@@ -13,6 +12,7 @@ function addTodo() {
   const todoItem = {
     name: todoName,
     date: todoDate,
+    completed: false,
   };
 
   // Get the existing todo list from localStorage
@@ -29,25 +29,167 @@ function addTodo() {
   renderTodoList();
 }
 
+// function renderTodoList() {
+//   const todoList = JSON.parse(localStorage.getItem("todoList")) || [];
+
+//   todoListElement.innerHTML = "";
+
+//   // Loop through the todo list and create HTML elements for each item
+//   todoList.forEach((todoItem, index) => {
+//     const todoElement = document.createElement("div");
+//     todoElement.className = "todo-item";
+//     todoElement.innerHTML = `
+//       <span>${todoItem.name}</span>
+//       <span>${todoItem.date}</span>
+// <button onclick="toggleComplete(${index})" class="todo-complete-btn ${
+//       todoItem.completed ? "completed" : ""
+//     }">
+//   Complete
+// </button>
+//       <button onclick="deleteTodo(${index})" class="todo-delete-btn">Delete</button>
+//     `;
+//     todoListElement.appendChild(todoElement);
+//   });
+// }
+//-------------
+// Add a modal window element to the HTML
+const modalElement = document.createElement("div");
+modalElement.className = "modal";
+modalElement.innerHTML = `
+  <div class="modal-content">
+    <img src="./cn.gif" alt="Checked">
+  </div>
+`;
+document.body.appendChild(modalElement);
+
+// Add a function to toggle the modal window
+function toggleModal() {
+  const modalElement = document.querySelector(".modal");
+
+  modalElement.classList.toggle("show");
+  setTimeout(() => {
+    modalElement.classList.remove("show");
+  }, 3000);
+}
+
+// Update the complete button to toggle the modal window
+// function renderTodoList() {
+//   const todoList = JSON.parse(localStorage.getItem("todoList")) || [];
+
+//   todoListElement.innerHTML = "";
+
+//   todoList.forEach((todoItem, index) => {
+//     const todoElement = document.createElement("div");
+//     todoElement.className = "todo-item";
+//     todoElement.innerHTML = `
+//       <span>${todoItem.name}</span>
+//       <span>${todoItem.date}</span>
+//       <button onclick="toggleComplete(${index}); toggleModal()" class="todo-complete-btn ${
+//         todoItem.completed? "completed" : ""
+//       }">
+//         Complete
+//       </button>
+//       <button onclick="deleteTodo(${index})" class="todo-delete-btn">Delete</button>
+//     `;
+//     todoListElement.appendChild(todoElement);
+//   });
+// }
 function renderTodoList() {
-  const todoList = JSON.parse(localStorage.getItem("todoList")) || [];
+  const todoList = JSON.parse(localStorage.getItem("todoList")) || []
 
-  todoListElement.innerHTML = "";
+  todoListElement.innerHTML = ""
 
-  // console.log(todoList)
-  // Loop through the todo list and create HTML elements for each item
   todoList.forEach((todoItem, index) => {
-    const todoElement = document.createElement("div");
-    todoElement.className = "todo-item";
+    const todoElement = document.createElement("div")
+    todoElement.className = "todo-item"
     todoElement.innerHTML = `
       <span>${todoItem.name}</span>
       <span>${todoItem.date}</span>
-      <button onclick="deleteTodo(${index})">Delete</button>
-    `;
-    todoListElement.appendChild(todoElement);
-  });
-}
+      <button onclick="toggleComplete(${index}); toggleModal()" class="todo-complete-btn ${todoItem.completed? 'completed' : ''}">
+        ${todoItem.completed? 'Completed' : 'Complete'}
+      </button>
+      <button onclick="deleteTodo(${index})" class="todo-delete-btn">Delete</button>
+    `
 
+    // Add the 'show' class to the modal element before appending the new todo item
+    if (!todoItem.completed) {
+      toggleModal()
+    }
+
+    todoListElement.appendChild(todoElement)
+  })
+}
+// Update the toggleComplete function to update the todo item's completed status
+// function toggleComplete(index) {
+
+//   let todoList = JSON.parse(localStorage.getItem("todoList")) || [];
+
+//   if (!todoList[index].completed) {
+//     todoList[index].completed = true;
+//     // Show the modal window with the GIF
+//     toggleModal();
+//   }
+//   // Save the updated todo list to localStorage
+//   localStorage.setItem("todoList", JSON.stringify(todoList));
+
+//   renderTodoList();
+// }
+// function toggleComplete(index) {
+//   let todoList = JSON.parse(localStorage.getItem("todoList")) || [];
+
+//   if (!todoList[index].completed) {
+//     todoList[index].completed = true;
+
+//     // Update the button's text and class immediately
+//     const completeButton = document.querySelectorAll('.todo-complete-btn')[index];
+//     completeButton.textContent = 'Completed';
+//     completeButton.classList.add('completed');
+
+//     // Show the modal window with the GIF
+//     toggleModal();
+//   }
+
+//   // Save the updated todo list to localStorage
+//   localStorage.setItem("todoList", JSON.stringify(todoList));
+
+//   renderTodoList();
+// }
+// function toggleComplete(index) {
+//   let todoList = JSON.parse(localStorage.getItem("todoList")) || [];
+
+//   if (!todoList[index].completed) {
+//     todoList[index].completed = true;
+
+//     // Update the button's text and class immediately
+//     const completeButton = document.querySelectorAll('.todo-complete-btn')[index];
+//     completeButton.textContent = 'Completed';
+//     completeButton.classList.add('completed');
+
+//     // Show the modal window with the GIF
+//     toggleModal();
+//   }
+
+//   localStorage.setItem("todoList", JSON.stringify(todoList));
+//   renderTodoList();
+// }
+function toggleComplete(index) {
+  let todoList = JSON.parse(localStorage.getItem("todoList")) || []
+
+  if (!todoList[index].completed) {
+    todoList[index].completed = true
+
+    // Update the button's text and class immediately
+    const completeButton = document.querySelectorAll('.todo-complete-btn')[index]
+    completeButton.textContent = 'Completed'
+    completeButton.classList.add('completed')
+
+    // Show the modal window with the GIF
+    toggleModal()
+  }
+
+  localStorage.setItem("todoList", JSON.stringify(todoList))
+  renderTodoList()
+}
 // Function to delete a todo item
 function deleteTodo(index) {
   let todoList = JSON.parse(localStorage.getItem("todoList")) || [];
@@ -60,9 +202,20 @@ function deleteTodo(index) {
   renderTodoList();
 }
 
+// Function to toggle complete status of a todo item
+// function toggleComplete(index) {
+//   let todoList = JSON.parse(localStorage.getItem("todoList")) || [];
+
+//   todoList[index].completed = !todoList[index].completed;
+
+//   // Save the updated todo list to localStorage
+//   localStorage.setItem("todoList", JSON.stringify(todoList));
+
+//   renderTodoList();
+// }
+
 // Render the todo list on page load
 renderTodoList();
-
 
 /*
 let todoList = [
@@ -140,4 +293,3 @@ console.log the todoList array.
 reset the input field value.
 
 */
-
