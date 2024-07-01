@@ -1,0 +1,23 @@
+
+1.select the input and data showing field
+2.function for add the data - addTodo()
+  -take input value
+  -create a new object with name, date, completed properties for store the data
+  -push the data in storage
+  -set the data in localStorage
+  -reset the inputField
+  -called the another function
+3.make a function for get and showing the data in UI - renderTodoList()
+  -get the data from localStorage
+  -initially the ui will be ''
+  -using forEach to get each Item from object including index
+  -create a div element, className and make it innerHTML
+  -showing the data in UI
+  -using some condition for showing the button and content of button element
+  -
+** ALL FUNCTION **
+addTodo(): adds a new todo item to the list
+toggleModal(): toggles the visibility of a modal window
+renderTodoList(): renders the todo list in the HTML
+toggleComplete(index): toggles the completion status of a todo item
+deleteTodo(index): deletes a todo item from the list
