@@ -43,7 +43,7 @@ body {
     background-color: rgb(27, 27, 27);
 }
 
-.todo-grid {
+.todo-item {
 
     margin: 10px auto;
     width: 565px;

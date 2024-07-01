@@ -69,10 +69,20 @@ arrayName.push() diye array the push kora jai
 it's better to use while loop when in non-standard loop.
 
 
-
-
-
-
+========LOCALSTORAGE===============
+localstorage only support string
+localStorage.setItem('message', 'hello');
+--for convert object to json string-------
+localStorage.setItem('message', JSON.stringify(object));
+localStorage.getItem('message');
+if we have to convert string to object--
+JSON.parse(localStorage.getItem('message'));
+for remove item------
+localStorage.removeItem('message')
+when something doesn't exist in localStorage it's give => null
+!score same as score === null
+that's why
+if(message === null){} we have to use like some condition for avoid the error
 
 
 

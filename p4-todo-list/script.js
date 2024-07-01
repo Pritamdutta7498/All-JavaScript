@@ -1,3 +1,70 @@
+
+const nameInput = document.querySelector(".js-name-input");
+const dateInput = document.querySelector(".js-date-input");
+const todoListElement = document.querySelector(".js-todo-list");
+
+// Function to add a todo item
+function addTodo() {
+  // Get the input values
+  const todoName = nameInput.value;
+  const todoDate = dateInput.value;
+
+  // Create a new todo item object
+  const todoItem = {
+    name: todoName,
+    date: todoDate,
+  };
+
+  // Get the existing todo list from localStorage
+  let todoList = JSON.parse(localStorage.getItem("todoList")) || [];
+
+  todoList.push(todoItem);
+
+  // Save the updated todo list to localStorage
+  localStorage.setItem("todoList", JSON.stringify(todoList));
+
+  nameInput.value = "";
+  dateInput.value = "";
+
+  renderTodoList();
+}
+
+function renderTodoList() {
+  const todoList = JSON.parse(localStorage.getItem("todoList")) || [];
+
+  todoListElement.innerHTML = "";
+
+  // console.log(todoList)
+  // Loop through the todo list and create HTML elements for each item
+  todoList.forEach((todoItem, index) => {
+    const todoElement = document.createElement("div");
+    todoElement.className = "todo-item";
+    todoElement.innerHTML = `
+      <span>${todoItem.name}</span>
+      <span>${todoItem.date}</span>
+      <button onclick="deleteTodo(${index})">Delete</button>
+    `;
+    todoListElement.appendChild(todoElement);
+  });
+}
+
+// Function to delete a todo item
+function deleteTodo(index) {
+  let todoList = JSON.parse(localStorage.getItem("todoList")) || [];
+
+  todoList.splice(index, 1);
+
+  // Save the updated todo list to localStorage
+  localStorage.setItem("todoList", JSON.stringify(todoList));
+
+  renderTodoList();
+}
+
+// Render the todo list on page load
+renderTodoList();
+
+
+/*
 let todoList = [
   {
     name: "Wash the dress",
@@ -19,18 +86,22 @@ function getTodoList() {
 
     // destructuring the object to get name and dueDate properties directly
     const { name, dueDate } = todoObject;
+    // JSON.parse(localStorage.getItem('todo'))
+
     const html = `
         <div>${name} </div>
         <div>${dueDate} </div>
         <div>
-            <button 
-                onclick=" 
+            <button
+                onclick="
                     todoList.splice(${i}, 1);
                     getTodoList();
-                " class="todo-delete-btn">Delete</button> 
+                " class="todo-delete-btn">Delete</button>
         </div>
-            
+
          `;
+
+         console.log(todoObject)
     todoListHtml += html;
   }
   // console.log(todoListHtml);
@@ -48,7 +119,10 @@ function addTodo() {
   // console.log(todoList);
   inputElement.value = "";
   getTodoList();
+  // localStorage.setItem('todo', JSON.stringify(todoList));
+
 }
+*/
 
 /*-----Main Idea of js--------
 1.Save the data
@@ -67,4 +141,3 @@ reset the input field value.
 
 */
 
-//
