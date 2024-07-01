@@ -3,17 +3,11 @@ body {
   margin: 0;
   font-size: large;
   font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
-  /* background-image: url('./51Ry.gif');
-  background-attachment: fixed;
-  background-repeat: repeat;
-  background-size: cover;
-  background-position: 50px; */
   background-image: url('./1.gif');
   background-attachment: fixed;
   background-repeat: repeat;
   background-size: cover;
   background-position: 50px;
-
 }
 
 .main-layout {
@@ -30,14 +24,13 @@ body {
 }
 
 .data input {
-  width: 200px;
+  width: 265px;
   height: 40px;
   border-radius: 5px;
   border: none;
   outline: none;
   margin-left: 5px;
   padding: 0 10px;
-
 }
 
 .data button {
@@ -54,7 +47,6 @@ body {
 }
 
 .todo-item {
-
   margin: 15px auto;
   width: 565px;
   display: grid;
@@ -81,7 +73,6 @@ body {
   background-color: rgba(252, 68, 68, 0.952);
 }
 
-
 .todo-complete-btn {
   width: 100px;
   height: 30px;
@@ -99,7 +90,6 @@ body {
   background-color: #34c759;
   width: 100px;
   height: 30px;
-
 }
 
 .modal {
@@ -117,9 +107,76 @@ body {
   display: flex;
 }
 
-
 .modal-content img {
   width: 300px;
   height: 300px;
   margin: 20px auto;
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1200px) {
+  .main-layout {
+    width: 60%;
+  }
+  .todo-item {
+    width: 700px;
+  }
+}
+
+/* Tablet styles */
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .main-layout {
+    width: 70%;
+  }
+  .todo-item {
+    width: 500px;
+  }
+}
+
+/* Mobile styles */
+@media only screen and (max-width: 767px) {
+  body {
+    
+    background-size: contain;
+    background-position: 50px;
+  }
+  .main-layout {
+    width: 90%;
+    
+  }
+  .todo-item {
+    width: 300px;
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+  .data{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    
+  }
+  .data button {
+    width: 285px;
+  }
+  .todo-item {
+    margin: 20px auto;
+    width:80%;
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+    background-color: #ef72f3cc;
+    padding: 10px;
+    color: #000;
+
+  }
+ 
+  .todo-delete-btn {
+    width: 80px;
+  }
+  .todo-complete-btn {
+    width: 80px;
+  }
+  .modal-content img {
+    width: 200px;
+    height: 200px;
+  }
 }
