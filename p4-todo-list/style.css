@@ -137,7 +137,10 @@ body {
 @media only screen and (max-width: 767px) {
   body {
     
-    background-size: contain;
+    background-image: url('./2.gif');
+    background-attachment: fixed;
+    background-repeat: repeat;
+    background-size: cover;
     background-position: 50px;
   }
   .main-layout {
@@ -162,8 +165,9 @@ body {
     margin: 20px auto;
     width:80%;
     display: grid;
-    grid-template-columns: 5fr 3fr;
+    grid-template-columns: 5fr 2fr;
     background-color: #ef72f3cc;
+    border-radius: 10px;
     padding: 10px;
     color: #000;
 

@@ -1,3 +1,4 @@
+//---------step:1--------------------
 const nameInput = document.querySelector(".js-name-input");
 const dateInput = document.querySelector(".js-date-input");
 const todoListElement = document.querySelector(".js-todo-list");
@@ -15,6 +16,8 @@ function addTodo() {
     completed: false,
   };
 
+  //--------step: 2-----------------
+
   // Get the existing todo list from localStorage
   let todoList = JSON.parse(localStorage.getItem("todoList")) || [];
 
@@ -30,6 +33,7 @@ function addTodo() {
   renderTodoList();
 }
 
+//------------step: 6------------------------
 // Add a modal window element to the HTML
 const modalElement = document.createElement("div");
 modalElement.className = "modal";
@@ -50,6 +54,8 @@ function toggleModal() {
   }, 3000);
 }
 
+//-----------step: 3-------------------------
+
 function renderTodoList() {
   const todoList = JSON.parse(localStorage.getItem("todoList")) || [];
   todoListElement.innerHTML = "";
@@ -61,14 +67,15 @@ function renderTodoList() {
       <span>${todoItem.name}</span>
       <span>${todoItem.date}</span>
       <button onclick="toggleComplete(${index})" class="todo-complete-btn 
-      ${todoItem.completed ? "completed" : "blue-btn"}">
-      ${todoItem.completed ? "Completed" : "Complete"}
-      </button>
+      ${todoItem.completed ? "completed" : "blue-btn"}"> ${todoItem.completed ? "Completed" : "Complete"} </button>
       <button onclick="deleteTodo(${index})" class="todo-delete-btn">Delete</button>
     `;
     todoListElement.appendChild(todoElement);
   });
 }
+
+//------------step: 5------------------
+
 function toggleComplete(index) {
   let todoList = JSON.parse(localStorage.getItem("todoList")) || [];
 
@@ -88,6 +95,8 @@ function toggleComplete(index) {
   localStorage.setItem("todoList", JSON.stringify(todoList));
   renderTodoList();
 }
+
+//-----------step: 4---------------------
 
 // Function to delete a todo item
 function deleteTodo(index) {
